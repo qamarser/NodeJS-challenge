@@ -33,12 +33,22 @@ function startApp(name){
  * @param  {string} text data typed by the user
  * @returns {void}
  */
+//defining battata 
+function battata() {
+  console.log('Battata function called!');
+  // Add any additional logic you want to execute when 'battata' is received
+}
 function onDataReceived(text) {
-  if (text === 'quit\n') {
+  console.log('received input:', text);
+  text = text.trim(); // remove leading and trailing whitespace
+  if (text === 'quit') {    // /n  newline character
     quit();
   }
-  else if(text === 'hello\n'){
+  else if(text === 'hello'){
     hello();
+  }
+  else if(text === 'battata'){
+    battata(); //ask why is the ynknown command appearig 
   }
   else{
     unknownCommand(text);
@@ -79,4 +89,4 @@ function quit(){
 }
 
 // The following line starts the application
-startApp("Jad Sarout")
+startApp("Qamaar")
