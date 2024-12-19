@@ -44,12 +44,11 @@ function onDataReceived(text) {
     hello();
   }
   else if(text === 'battata'){
-    battata(); //ask why is the ynknown command appearig 
+    battata(); 
   }
   else if (text === 'help'){
     help()
   }
-  
   else{
     unknownCommand(text);
   }
@@ -98,14 +97,17 @@ function quit() {
 const exit = quit; //constant so we won't able t change them except manually 
 
 //help function 
-
+/**
+ * list the commands above 
+ *
+ * @returns {void}
+ */
 function help(){
   console.log('Available commands:');
   console.log('1. hello() - Greets the user.');
-  console.log('2. battata() - Executes the battata function.');
   console.log('3. exit() or quit() - Exits the application.');
   console.log('4. unknownCommand() - Handles unknown commands.');}
 
 
 // The following line starts the application
-startApp("Qamaar")
+startApp("Qamar")
