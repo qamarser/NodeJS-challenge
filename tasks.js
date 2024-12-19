@@ -41,7 +41,7 @@ function battata() {
 function onDataReceived(text) {
   console.log('received input:', text);
   text = text.trim(); // remove leading and trailing whitespace
-  if (text === 'quit') {    // /n  newline character
+  if (text === 'quit' || text ==='exit') {    // /n  newline character
     quit();
   }
   else if(text === 'hello'){
@@ -83,10 +83,12 @@ function hello(){
  *
  * @returns {void}
  */
-function quit(){
+function quit() {
   console.log('Quitting now, goodbye!')
   process.exit();
 }
+//exit refers to the quit function
+const exit = quit; //constant so we won't able t change them except manually 
 
 // The following line starts the application
 startApp("Qamaar")
