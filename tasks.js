@@ -33,11 +33,7 @@ function startApp(name){
  * @param  {string} text data typed by the user
  * @returns {void}
  */
-//defining battata 
-function battata() {
-  console.log('Battata function called!');
-  // Add any additional logic you want to execute when 'battata' is received
-}
+
 function onDataReceived(text) {
   console.log('received input:', text);
   text = text.trim(); // remove leading and trailing whitespace
@@ -50,10 +46,15 @@ function onDataReceived(text) {
   else if(text === 'battata'){
     battata(); //ask why is the ynknown command appearig 
   }
+  else if (text === 'help'){
+    help()
+  }
+  
   else{
     unknownCommand(text);
   }
 }
+
 
 
 /**
@@ -78,6 +79,12 @@ function hello(){
 }
 
 
+//defining battata 
+function battata() {
+  console.log('Battata function called!');
+  // Add any additional logic you want to execute when 'battata' is received
+}
+
 /**
  * Exits the application
  *
@@ -89,6 +96,16 @@ function quit() {
 }
 //exit refers to the quit function
 const exit = quit; //constant so we won't able t change them except manually 
+
+//help function 
+
+function help(){
+  console.log('Available commands:');
+  console.log('1. hello() - Greets the user.');
+  console.log('2. battata() - Executes the battata function.');
+  console.log('3. exit() or quit() - Exits the application.');
+  console.log('4. unknownCommand() - Handles unknown commands.');}
+
 
 // The following line starts the application
 startApp("Qamaar")
